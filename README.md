@@ -12,3 +12,24 @@ V is a finite non-empty set which contains the variables
 ∑ is the set of alphabet or symbols
 R is a set of rules where in the form X --> y where X must belong to V and y must be a string in V or ∑
 S is a variable in the set V known as the start variable
+### **3. Progress**
+When looking at the topic, since we need twice as many a's as there are b's, we can consider the number of b's as 'n', which means the number of a's can be described as 2n.
+
+b = n <br>
+a = 2n
+
+For a simple example, lets say we have 1 'b', then there would need to be 2 a's.
+
+b = 1 <br>
+a = 2(1) = 2
+
+The strings we can make in this case would be "aab","aba", and "baa".
+
+One attempt at making rules for a CFG was:
+
+S -> aaSb <br>
+S -> ϵ
+
+This does create strings that have twice as many a's as there are b's (e.g. "aab", "aaaabb", "aaaaaabbb"), however the issue is that the strings only follow the pattern "aab". These rules do not produce any strings with the other patterns "aba" and "baa", which limits the unique strings that the CFG could produce.
+
+
