@@ -8,10 +8,10 @@ Context-Free Grammar (CFG) allows us to show languages using using variables tog
 A CFG is defined by a 4-tuple notation:
 G = (V, ∑, R, S)
 
-V is a finite non-empty set which contains the variables
-∑ is the set of alphabet or symbols
-R is a set of rules where in the form X --> y where X must belong to V and y must be a string in V or ∑
-S is a variable in the set V known as the start variable
+V is a finite non-empty set which contains the variables<br>
+∑ is the set of alphabet or symbols<br>
+R is a set of rules where in the form X --> y where X must belong to V and y must be a string in V or ∑<br>
+S is a variable in the set V known as the start variable<br>
 
 Example CFG:
 
