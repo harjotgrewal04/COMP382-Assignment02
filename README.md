@@ -24,18 +24,18 @@ Op --> *
 
 Generates:
 
-E
-E Op E
-E Op E Op E
-int Op int Op int
-int + int * int 
-int Op E
-E Op int 
-int Op int
-int + int
-int * int
-int / int
-int - int
+E<br>
+E Op E<br>
+E Op E Op E<br>
+int Op int Op int<br>
+int + int * int <br>
+int Op E<br>
+E Op int <br>
+int Op int<br>
+int + int<br>
+int * int<br>
+int / int<br>
+int - int<br>
 
 Context Free Language (CFL) is the set of strings which is derivable from the orgiinal start symbol based on the given alphabet set. 
 
