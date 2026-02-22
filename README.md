@@ -47,7 +47,6 @@ Here our G = (V, ∑, R, S) where V = {S}, ∑ = {a, b}, R: {}, and the starting
 We can also define the context free language as:
 _L_ = {w ∈ Σ | #a(w) = 2#b(w)} 
 
-### **3.1 Proof**
 When looking at the topic, since we need twice as many a's as there are b's, we can consider the number of b's as 'n', which means the number of a's can be described as 2n.
 
 b = n <br>
@@ -67,10 +66,9 @@ S -> ϵ
 
 This does create strings that have twice as many a's as there are b's (e.g. "aab", "aaaabb", "aaaaaabbb"), however the issue is that the strings only follow the pattern "aab". These rules do not produce any strings with the other patterns "aba" and "baa", which limits the unique strings that the CFG could produce. To fix this we can create further derivations:
 
-S -> bSaa
+S -> 
 S -> aSab
 S -> abSa
-
 S -> 
 
 On a side note, if the number of a's and b's is an empty string (), it meets the condition of being a string in L.
