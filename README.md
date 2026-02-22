@@ -8,10 +8,10 @@ Context-Free Grammar (CFG) allows us to show languages using using variables tog
 A CFG is defined by a 4-tuple notation:
 G = (V, ∑, R, S)
 
-V is a finite non-empty set which contains the variables<br>
-∑ is the set of alphabet or symbols<br>
-R is a set of rules where in the form X --> y where X must belong to V and y must be a string in V or ∑<br>
-S is a variable in the set V known as the start variable<br>
+V is a finite non-empty set which contains the variables
+∑ is the set of alphabet or symbols
+R is a set of rules where in the form X --> y where X must belong to V and y must be a string in V or ∑
+S is a variable in the set V known as the start variable
 
 Example CFG:
 
@@ -64,12 +64,28 @@ One attempt at making rules for a CFG was:
 S -> aaSb <br>
 S -> ϵ
 
-This does create strings that have twice as many a's as there are b's (e.g. "aab", "aaaabb", "aaaaaabbb"), however the issue is that the strings only follow the pattern "aab". These rules do not produce any strings with the other patterns "aba" and "baa", which limits the unique strings that the CFG could produce. To fix this we can create further derivations:
+This does create strings that have twice as many a's as there are b's (e.g. "aab", "aaaabb", "aaaaaabbb"), however the issue is that the strings only follow the pattern "aab". These rules do not produce any strings with the other patterns "aba" or "baa", which limits the unique strings that the CFG could produce. 
 
-S -> 
-S -> aSab
-S -> abSa
-S -> 
+To fix this, we created two more simple CFG's representing patterns "aba" and "baa":
+
+S -> baSa <br>
+S -> ϵ
+
+S -> abSa <br>
+S -> ϵ
+
+Now with the three CFG's we can combine them into a singular CFG:
+
+S -> S_1 | S_2 | S_3 <br>
+S_1 -> aaSb | ϵ <br>
+S_2 -> abSa | ϵ <br>
+S_3 -> baSa | ϵ
+
+This CFG allows for strings to be created with more than one pattern of a's and b's, while also enforcing the requirement of having twice as many a's as there are b's.
+
+
+### **3.1 Proof**
+
 
 On a side note, if the number of a's and b's is an empty string (), it meets the condition of being a string in L.
 
