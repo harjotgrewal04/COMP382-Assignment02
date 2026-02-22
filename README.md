@@ -36,5 +36,13 @@ On a side note, if the number of a's and b's is an empty string (), it meets the
 
 
 
+## **4. Simplicity of Grammar**
+The following reasons is what makes this grammar the simplest for the language L:
 
+1) It only utilizes one nonterminal symbol which is S
+2) The ratio of exactly 2:1 remains constant throughout every single production made
+3) A easy to understand mathemtacial formula is used to prove the theory (a = 2n)
+4) Removing any of the three production of strings ("aab","aba","baa") can reject the process of generating all valid strings.
+
+For example, removing S --> aSbSaS means we do not have the aba pattern. In simpler terms, we cannot generate a string in L where the b is positioned between 2 a's. Therefore, the grammar is incomplete as it does not allow all three permutations. 
 
