@@ -42,6 +42,11 @@ Context Free Language (CFL) is the set of strings which is derivable from the or
 For the example earlier the language would be _L_ = { w ∈ Σ | #int(w) = #Op(w) + 1 }
 
 ## **3. Solution**
+Here our G = (V, ∑, R, S) where V = {S}, ∑ = {a, b}, R: {}, and the starting symbol is S.
+
+We can also define the context free language as:
+_L_ = {w ∈ Σ | #a(w) = 2#b(w)} 
+
 ### **3.1 Proof**
 When looking at the topic, since we need twice as many a's as there are b's, we can consider the number of b's as 'n', which means the number of a's can be described as 2n.
 
@@ -60,7 +65,13 @@ One attempt at making rules for a CFG was:
 S -> aaSb <br>
 S -> ϵ
 
-This does create strings that have twice as many a's as there are b's (e.g. "aab", "aaaabb", "aaaaaabbb"), however the issue is that the strings only follow the pattern "aab". These rules do not produce any strings with the other patterns "aba" and "baa", which limits the unique strings that the CFG could produce.
+This does create strings that have twice as many a's as there are b's (e.g. "aab", "aaaabb", "aaaaaabbb"), however the issue is that the strings only follow the pattern "aab". These rules do not produce any strings with the other patterns "aba" and "baa", which limits the unique strings that the CFG could produce. To fix this we can create further derivations:
+
+S -> bSaa
+S -> aSab
+S -> abSa
+
+S -> 
 
 On a side note, if the number of a's and b's is an empty string (), it meets the condition of being a string in L.
 
@@ -77,5 +88,7 @@ The following reasons is what makes this grammar the simplest for the language L
 For example, removing S --> aSbSaS means we do not have the aba pattern. In simpler terms, we cannot generate a string in L where the b is positioned between 2 a's. Therefore, the grammar is incomplete as it does not allow all three permutations. 
 
 ### **4. References**
-- 
+- Index of /class/archive/cs/cs103/cs103.1164/lectures/18. (2016). Stanford.edu. https://web.stanford.edu/class/archive/cs/cs103/cs103.1164/lectures/18/
+- Campbell, R. (2026). Sec 2.1 Context-Free Grammars Lecture slides COMP-382-ON1: Language, Computation and Machines. University of the Fraser Valley‌
+- Sipser, M. (2013). Introduction to the theory of computation. Course Technology Cengage Learning.‌
 
