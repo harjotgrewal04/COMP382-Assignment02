@@ -79,13 +79,22 @@ Now with the three CFG's we can combine them into a singular CFG:
 S -> S_1 | S_2 | S_3 <br>
 S_1 -> aaSb | ϵ <br>
 S_2 -> abSa | ϵ <br>
-S_3 -> baSa | ϵ
+S_3 -> baSa | ϵ 
 
 This CFG allows for strings to be created with more than one pattern of a's and b's, while also enforcing the requirement of having twice as many a's as there are b's.
 
 
 ### **3.1 Proof**
+Completeness of this grammar ensures every valid string can be generated.
 
+For example, let w ϵ L where a = 2n.
+If w ≠ ϵ, then the string must contain atleast one b, which is met with two a's anywhere within the string.
+The grammar allows the recursive S's to let arbitrary substrings before, after and between. 
+Therefore, the b can appear before both a's, after both a's, and between the a's.
+Any valid string can be decomposed into:
+-one string (2 a's + 1 b)
+-smaller valid substrings
+So, by conducting induction on the number of b's, each string is derivable if valid.
 
 On a side note, if the number of a's and b's is an empty string (), it meets the condition of being a string in L.
 
