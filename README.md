@@ -115,4 +115,6 @@ For example, removing S --> aSbSaS means we do not have the aba pattern. In simp
 - Index of /class/archive/cs/cs103/cs103.1164/lectures/18. (2016). Stanford.edu. https://web.stanford.edu/class/archive/cs/cs103/cs103.1164/lectures/18/
 - Campbell, R. (2026). Sec 2.1 Context-Free Grammars Lecture slides COMP-382-ON1: Language, Computation and Machines. University of the Fraser Valley‌
 - Sipser, M. (2013). Introduction to the theory of computation. Course Technology Cengage Learning.‌
+- PageWizard Games, Learning & Entertainment. (2023, May 12). Proving a Context-Free Grammar is Correct (Theory of Computing). YouTube. https://www.youtube.com/watch?v=dOP1ASa6jZg
+‌
 
