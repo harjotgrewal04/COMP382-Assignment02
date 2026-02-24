@@ -85,18 +85,47 @@ This CFG allows for strings to be created with more than one pattern of a's and 
 
 
 ### **3.1 Proof**
-Completeness of this grammar ensures every valid string can be generated.
+1.) Soundness of this grammar ensures that all strings produced are valid.<br>
 
-For example, let w ϵ L where a = 2n.
-If w ≠ ϵ, then the string must contain atleast one b, which is met with two a's anywhere within the string.
-The grammar allows the recursive S's to let arbitrary substrings before, after and between. 
-Therefore, the b can appear before both a's, after both a's, and between the a's.
-Any valid string can be decomposed into:
--one string (2 a's + 1 b)
--smaller valid substrings
-So, by conducting induction on the number of b's, each string is derivable if valid.
+Base Case: S -> ϵ meaning that there are 0 a's and 0 b's therefore: 0(a) = 2 * 0(b) => 0 = 0.<br>
 
-On a side note, if the number of a's and b's is an empty string (), it meets the condition of being a string in L.
+Each time we apply a rule S it gives us:<br>
+#a(total) = #(a) + 2<br>
+#b(total) = #(b) + 1<br>
+
+So essentially everytime we are applying a rule S we are adding two a's and one b to the number of a's and b's we already to have to get the new total.<br>
+
+Plugging this back into the original formula gives us:<br>
+
+#a = 2 * #b => <br>
+#a + 2 = 2 (#b + 1) =><br>
+#a + 2 = 2#b + 2<br>
+
+Here we can see on the right side we can plug back in our original formula<br>
+
+#a + 2 = #a + 2<br>
+
+Therefore proving our original claim that all strings produced by the grammar #a = 2#b are valid.<br>
+
+2.) Completeness of this grammar ensures that all valid strings are produced<br>
+
+Base Case: S -> ϵ meaning that there are 0 a's and 0 b's therefore: 0(a) = 2 * 0(b) => 0 = 0. <br>
+
+Each time we apply a rule S it gives us:<br>
+#a(total) = #(a) + 2<br>
+#b(total) = #(b) + 1<br>
+
+#a = 2 * #b => <br>
+#a + 2 = 2 (#b + 1) =><br>
+#a + 2 = 2#b + 2<br>
+
+Canceling the twos on each side gives us:<br>
+
+#a = 2#b<br>
+
+Therefore our original claim that this grammar ensures all valid strings are produced is true. 
+
+
 
 
 
