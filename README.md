@@ -84,7 +84,7 @@ The strings we can make in this case would be "aab", "aba", and "baa".
 One attempt at making rules for a CFG was:
 
 ```
-S → aaSb
+S → aSaSbS
 S → ε
 ```
 
@@ -93,11 +93,11 @@ While this does create strings that have twice as many a's as there are b's (e.g
 To fix this, we created two more simple CFG's representing patterns "aba" and "baa":
 
 ```
-S → baSa
+S → bSaSaS
 S → ε
 ```
 ```
-S → abSa
+S → aSbSaS
 S → ε
 ```
 
@@ -105,15 +105,15 @@ We can now combine the three CFG's into a singular CFG:
 
 ```
 S → S₁ | S₂ | S₃
-S₁ → aaSb | ε
-S₂ → abSa | ε
-S₃ → baSa | ε
+S₁ → aSaSbS | ε
+S₂ → aSbSaS | ε
+S₃ → bSaSaS | ε
 ```
 
 Or more simply:
 
 ```
-S → aaSb | abSa | baSa | ε
+S → aSaSbS | aSbSaS | bSaSaS | ε
 ```
 
 This CFG allows for strings to be created with multiple patterns of a's and b's, while also enforcing the requirement of having twice as many a's as there are b's.
@@ -182,7 +182,7 @@ The following reasons makes this grammar one of the simplest for the language L:
 4) A easy to understand mathematical formula is used to prove the theory (a = 2n)
 5) Removing any of the three production of strings ("aab", "aba", "baa") can reject the process of generating all valid strings
 
-For example, removing S → abSa means we do not have the aba pattern. In other words, we would not be able to generate a string in L where the b is positioned between 2 a's.
+For example, removing S → aSbSaS means we do not have the aba pattern. In other words, we would not be able to generate a string in L where the b is positioned between 2 a's.
 
 ### **4. References**
 - Index of /class/archive/cs/cs103/cs103.1164/lectures/18. (2016). Stanford.edu. https://web.stanford.edu/class/archive/cs/cs103/cs103.1164/lectures/18/
