@@ -2,6 +2,9 @@
 
 ## **Group Members: Inder, Sophie, Sahil, Harjot**
 
+## **Group Vlog**
+https://youtu.be/ejMiGNHQGyQ 
+
 ## **1. Project Overview**
 Given ∑ = {a,b}, find a CFG generating the language L of strings which have twice as many a's as there are b's. The grammar must be proven correct and justified in why it is one of the simplest that could be made for this language L.
 
