@@ -3,47 +3,54 @@
 ## **Group Members: Inder, Sophie, Sahil, Harjot**
 
 ## **1. Project Overview**
-Let ∑ = {a,b}. Find a CFG generating the language L of strings which have twice as many a's as there are b's. The grammar must be proven correct and justified in why it is one of the simplest that could be made for this language L.
+Given ∑ = {a,b}, find a CFG generating the language L of strings which have twice as many a's as there are b's. The grammar must be proven correct and justified in why it is one of the simplest that could be made for this language L.
 
 ## **2. Context-Free Grammar**
-A Context-Free Grammar (CFG) is a set of rules that defines the structure of a language. It allows us to show languages using variables together with production rules to convert those variables into alphabet symbols. When a string only has alphabet symbols and no variables that is when we can call it a context-free grammar. 
+A Context-Free Grammar (CFG) is a formal system used to describe the structure of a language. It defines how strings in the language can be generated using variables and substitution rules.
+
+A grammar generates strings starting from a symbol (usually "S"), and substitution rules are applied continously until no more variable symbols are left.
 
 A CFG is defined by a 4-tuple notation:
 
-G = (V, ∑, R, S)
+G = (V, ∑, R, S) where
 
-- V is a finite non-empty set that contains the variables
-- ∑ is a set of alphabet or symbols
-- R is a set of rules in the form X &#8594; y, where X must belong to V and y must be a string in V or ∑
+- V is a finite non-empty set, called the *variables*
+- ∑ is a finite set of alphabet or symbols, called the *terminals*
+- R is a finite set of *rules* in the form X &#8594; y, where X must belong to V and y must be a string in V or ∑
 - S is a variable in the set V, also known as the start variable
 
-Example CFG:
+We call the set of all possible strings derived by a grammar the *language of the grammar*, or L(G).
+
+### **2.1 Example CFG**
+
+Consider the following grammar:
 
 E &#8594; int          
 E &#8594; E Op E      
 Op &#8594; +          
 Op &#8594; -          
 Op &#8594; /          
-Op &#8594; *          
+Op &#8594; *
 
-Generates:
+This grammar generates arithmetic expressions composed of the terminal representing an arbitrary integer, and the binary operators +, -, *, and /.
 
-E<br>
-E Op E<br>
-E Op E Op E<br>
-int Op int Op int<br>
-int + int * int <br>
-int Op E<br>
-E Op int <br>
-int Op int<br>
-int + int<br>
-int * int<br>
-int / int<br>
-int - int<br>
+Here:
 
-Context Free Language (CFL) is the set of strings which is derivable from the orgiinal start symbol based on the given alphabet set. 
+- V = {E, Op}
+- ∑ = {int, +, -, *, /}
+- S = E
 
-For the earlier example, the language would be _L_ = { w ∈ Σ | #int(w) = #Op(w) + 1 }
+Example derivations:
+
+E &#8594; int
+
+E &#8594; E Op E &#8594; int Op E &#8594; int + E &#8594; int + int
+
+E &#8594; E op E &#8594; E op E op E &#8594; int + int / int
+
+The language of the example grammar would be:
+
+_L_ = { w ∈ Σ | #int(w) = #Op(w) + 1 }
 
 ## **3. Solution**
 Let G = (V, ∑, R, S) be our grammar, where V = {S}, ∑ = {a, b}, R: {}, and the starting symbol be S.
