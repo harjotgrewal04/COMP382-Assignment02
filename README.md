@@ -123,6 +123,8 @@ This CFG allows for strings to be created with multiple patterns of a's and b's,
 
 Base Case: S → ε, meaning that there are 0 a's and 0 b's. Therefore, 0(a) = 2 * 0(b) ⟹ 0 = 0.
 
+Inductive Step:
+
 Each time we apply a rule S it gives us:
 
 ```
@@ -151,6 +153,8 @@ Therefore proving our original claim that all strings produced by the grammar #a
 2.) Completeness of this grammar ensures that all valid strings are produced.
 
 Base Case: S → ε, meaning that there are 0 a's and 0 b's. Therefore, 0(a) = 2 * 0(b) ⟹ 0 = 0.
+
+Inductive Step:
 
 Each time we apply a rule S it gives us:
 
@@ -185,8 +189,8 @@ The following reasons makes this grammar one of the simplest for the language L:
 For example, removing S → aSbSaS means we do not have the aba pattern. In other words, we would not be able to generate a string in L where the b is positioned between 2 a's.
 
 ### **4. References**
-- Index of /class/archive/cs/cs103/cs103.1164/lectures/18. (2016). Stanford.edu. https://web.stanford.edu/class/archive/cs/cs103/cs103.1164/lectures/18/
 - Campbell, R. (2026). Sec 2.1 Context-Free Grammars Lecture slides COMP-382-ON1: Language, Computation and Machines. University of the Fraser Valley‌
+- Context-Free Grammars. (2016). Stanford University. https://web.stanford.edu/class/archive/cs/cs103/cs103.1164/lectures/18/Slides18.pdf
 - Sipser, M. (2013). Introduction to the theory of computation. Course Technology Cengage Learning.‌
 - PageWizard Games, Learning & Entertainment. (2023, May 12). Proving a Context-Free Grammar is Correct (Theory of Computing). YouTube. https://www.youtube.com/watch?v=dOP1ASa6jZg
 ‌
